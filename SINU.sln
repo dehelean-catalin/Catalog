@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SINU", "SINU\SINU.csproj", "{9E61FF63-76D6-4D1E-A025-06F74A777BF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C02E2C0B-3CD5-41D0-A688-5188070883A5}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E61FF63-76D6-4D1E-A025-06F74A777BF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E61FF63-76D6-4D1E-A025-06F74A777BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E61FF63-76D6-4D1E-A025-06F74A777BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E61FF63-76D6-4D1E-A025-06F74A777BF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80E66D94-EF5E-41B9-BF50-7A66E3189728}
+	EndGlobalSection
+EndGlobal
