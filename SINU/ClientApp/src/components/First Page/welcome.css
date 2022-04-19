@@ -1,0 +1,378 @@
+.welcome {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../First Page/images/Background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+.welcome-text {
+  flex-direction: row;
+  color: rgb(255, 183, 1);
+  font-size: 90px;
+  font-weight: 700;
+  text-align: center;
+}
+.catalog-text {
+  animation-name: welcomeText;
+  animation-duration: 2s;
+  margin-right: 10px;
+}
+@keyframes welcomeText {
+  from {
+    opacity: 0;
+    transform: translateX(-800px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.online-text {
+  color: transparent;
+  font-size: 90px;
+  -webkit-text-stroke: 3.2px;
+  -webkit-text-stroke-color: white;
+  animation: welcomeTextRight 2.2s;
+}
+@keyframes welcomeTextRight {
+  from {
+    opacity: 0;
+    transform: translateX(800px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.question {
+  color: rgb(255, 183, 1);
+  font-size: 20px;
+}
+.navbar-button-student {
+  width: 105px;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px;
+  border: 0;
+  margin-right: 7px;
+  border-radius: 50px;
+  cursor: pointer;
+  transform: translate(-56px, -250px);
+  z-index: 1;
+  position: absolute;
+  animation-name: navbar;
+  animation-duration: 1.6s;
+}
+@keyframes navbar {
+  from {
+    opacity: 0;
+    transform: translate(-56px, -500px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.navbar-button-teacher {
+  width: 105px;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px;
+  border: 0;
+  margin-left: 7px;
+  border-radius: 50px;
+  transform: translate(56px, -250px);
+  z-index: 1;
+  position: absolute;
+  animation-name: navbar1;
+  animation-duration: 1.6s;
+  cursor: pointer;
+}
+
+@keyframes navbar1 {
+  from {
+    opacity: 0;
+    transform: translate(56px, -500px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.student-card {
+  height: 630px;
+  width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px black;
+  background-image: url("../First Page/images/Student.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: width 0.6ms;
+  animation-name: studentCard;
+  animation-duration: 1.8s;
+  position: absolute;
+}
+@keyframes studentCard {
+  from {
+    opacity: 0px;
+    transform: translate(-1300px, 0px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.student-card-text {
+  display: flex;
+  font-size: 44px;
+  font-weight: 800;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 170px;
+  margin-left: 70px;
+  text-shadow: 2px 2px black;
+}
+.student-card-buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-left: 70px;
+}
+.student-card-button-login {
+  width: 125px;
+  color: white;
+  font-weight: 700;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 9px;
+  border: 1px solid white;
+  margin-right: 7px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.7s;
+  animation-name: loginAnimation;
+  animation-duration: 2s;
+}
+@keyframes loginAnimation {
+  from {
+    opacity: 0;
+    transform: translate(0, 200px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.student-card-button-login:hover {
+  color: rgb(24, 29, 82);
+  background-color: rgb(255, 255, 255);
+}
+.student-card-button-signup {
+  width: 125px;
+  color: rgb(24, 29, 82);
+  font-weight: 700;
+  font-size: 20px;
+  background-color: transparent;
+  padding: 9px;
+  border: 1px solid rgb(24, 29, 82);
+  margin-left: 7px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.7s;
+  animation-name: signUpAnimation;
+  animation-duration: 2.3s;
+}
+@keyframes signUpAnimation {
+  from {
+    opacity: 0;
+    transform: translate(0, 200px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.student-card-button-signup:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(24, 29, 82);
+}
+
+.teacher-card {
+  height: 630px;
+  width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px black;
+  background-image: url("../First Page/images/Teacher.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: width 0.6ms;
+  animation-name: teacherCard;
+  animation-duration: 1.8s;
+  position: absolute;
+}
+@keyframes teacherCard {
+  from {
+    opacity: 0px;
+    transform: translate(1300px, 0px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.teacher-card-button-signup {
+  width: 125px;
+  color: rgb(35, 173, 209);
+  font-weight: 700;
+  font-size: 20px;
+  border: 3px solid rgb(35, 173, 209);
+  padding: 9px;
+  background-color: transparent;
+  margin-left: 7px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.7s;
+  animation-name: signUpAnimation;
+  animation-duration: 2.3s;
+}
+@keyframes signUpAnimation {
+  from {
+    opacity: 0;
+    transform: translate(0, 200px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.teacher-card-button-signup:hover {
+  background-color: rgb(35, 173, 209);
+  color: white;
+}
+
+.teacher-card-button-login {
+  width: 125px;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: transparent;
+  padding: 9px;
+  border: 3px solid white;
+  margin-left: 7px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.7s;
+  animation-name: signUpAnimation;
+  animation-duration: 2.3s;
+}
+.teacher-card-button-login:hover {
+  background-color: white;
+  color: rgb(35, 173, 209);
+}
+@keyframes signUpAnimation {
+  from {
+    opacity: 0;
+    transform: translate(0, 200px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .student-card {
+    height: 600px;
+    width: 400px;
+  }
+  @keyframes studentCard {
+    from {
+      opacity: 0px;
+      transform: translate(-500px, 0px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .student-card-text {
+    font-size: 38px;
+    color: rgb(255, 183, 1);
+  }
+  .student-card-buttons {
+    align-items: center;
+    margin: 0px;
+    padding: 0;
+    margin-top: 100px;
+    flex-direction: column;
+  }
+  .student-card-button-login {
+    width: 60%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 0px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  .student-card-button-login:hover {
+    background-color: rgb(24, 29, 82);
+    color: white;
+  }
+  .student-card-button-signup {
+    width: 60%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 0px;
+    margin: 0px;
+  }
+  .student-card-button-signup:hover {
+    background-color: rgb(24, 29, 82);
+  }
+
+  .teacher-card {
+    height: 600px;
+    width: 400px;
+  }
+  @keyframes teacherCard {
+    from {
+      opacity: 0px;
+      transform: translate(500px, 0px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .teacher-card-button-login {
+    width: 60%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 0px;
+    margin-bottom: 10px;
+  }
+  .teacher-card-button-signup {
+    width: 60%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 0px;
+  }
+  .teacher-card-button-signup:hover {
+    background-color: white;
+    color: rgb(35, 173, 209);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
