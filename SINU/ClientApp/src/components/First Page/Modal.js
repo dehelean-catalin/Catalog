@@ -62,13 +62,8 @@ function Modal(props) {
 	const validate = (values) => {
 		const errors = {};
 		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-		if (!values.email) {
-			errors.email = "Email is required!";
-		} else if (!regex.test(values.email)) {
-			errors.email = "This is not a valid email format!";
-		}
-		if (!values.password) {
-			errors.password = "Password is required";
+		if (!regex.test(values.email)) {
+			errors.email = "Invalid format!";
 		}
 		return errors;
 	};
@@ -97,21 +92,23 @@ function Modal(props) {
 	return (
 		<div className="modalLogin">
 			<form>
-				<h3>Log In</h3>
+				<div className="modal-login-title">Login</div>
+
 				<div className="inputField">
-					<h1>Email</h1>
+					<h2 className="firstPage-modal-error">{formErrors.email}</h2>
 					<input
 						type="text"
 						className="inputLogin"
-						placeholder="Enter email"
+						placeholder="Email"
 						name="email"
 						value={formValues.email}
 						onChange={handleChange}
+						style={{ borderColor: formErrors.email ? "red" : "" }}
 					/>
-					<h2>{formErrors.email}</h2>
+					<h1 className="firstPage-modal-text">Email</h1>
 				</div>
 				<div className="inputField">
-					<h1>Password</h1>
+					<h2 className="firstPage-modal-error">{formErrors.password}</h2>
 					<input
 						type={PasswordInputType}
 						className="inputLogin"
@@ -119,12 +116,19 @@ function Modal(props) {
 						name="password"
 						value={formValues.password}
 						onChange={handleChange}
+						style={{ borderColor: formErrors.password ? "red" : "" }}
 					/>
-					<h2>{formErrors.password}</h2>
+					<h1 className="firstPage-modal-text">Password</h1>
+
 					<div className="password-toggle-icon-from-login">{ToogleIcon}</div>
 				</div>
 
-				<button type="submit" className="button-login" onClick={handleSubmit}>
+				<button
+					type="submit"
+					className="button-login"
+					onClick={handleSubmit}
+					disabled={!formValues.email || !formValues.password}
+				>
 					Log in
 				</button>
 				<h4>

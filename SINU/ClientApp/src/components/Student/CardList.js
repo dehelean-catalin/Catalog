@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 const CardList = ({ subjectList, subjectGrades }) => {
+	console.log(subjectList);
 	const cardsArray = subjectList.map((subject) => (
 		<Card
 			grades={subjectGrades

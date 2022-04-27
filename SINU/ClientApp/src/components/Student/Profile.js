@@ -18,8 +18,6 @@ function Profile() {
 	useEffect(() => {
 		Axios.get(`https://localhost:44328/api/Students/${id}`).then((response) => {
 			localStorage.setItem("studentClass", JSON.stringify(response.data));
-
-			console.log("haha");
 			setClassName(JSON.parse(localStorage.getItem("studentClass"))["ClassName"]);
 			setStudyYear(JSON.parse(localStorage.getItem("studentClass"))["StudyYearName"]);
 		});

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as AiIcons from "react-icons/ai";
+import * as MdIcons from "react-icons/md";
 import NavBar from "./NavBar/NavBar";
 import Modal from "./Modal";
 import Backdrop from "../First Page/Backdrop";
@@ -19,28 +19,57 @@ function Settings() {
 			<NavBar />
 			<div className="settings-container">
 				<div className="settings-container-row">
-					{firstName} {lastName}
+					<img className="settings-img" />
+					<div className="settings-text1">Name</div>
+
+					<div className="settings-text2">
+						{firstName} {lastName}
+					</div>
 				</div>
 
-				<div className="settings-container-row">{idcnp}</div>
+				<div className="settings-container-row">
+					<img className="settings-img" />
+					<div className="settings-text1">Email</div>
 
-				<div className="settings-container-row">{email}</div>
+					<div className="settings-text2">{email}</div>
+				</div>
 
-				<div className="settings-container-row">{phoneNumber}</div>
+				<div className="settings-container-row">
+					<img className="settings-img" />
+					<div className="settings-text1">Id</div>
 
-				<div className="settings-container-row">{address}</div>
+					<div className="settings-text2">{idcnp}</div>
+				</div>
 
-				<div className="settings-container-row">{nationality}</div>
+				<div className="settings-container-row">
+					<img className="settings-img" />
+					<div className="settings-text1">Phone</div>
 
-				<button onClick={() => setEditArea(true)}>
-					<AiIcons.AiFillEdit
+					<div className="settings-text2">{phoneNumber}</div>
+				</div>
+
+				<div className="settings-container-row">
+					<img className="settings-img" />
+					<div className="settings-text1">Address</div>
+
+					<div className="settings-text2">{address}</div>
+				</div>
+				<div className="settings-container-row">
+					<img className="settings-img" />
+					<div className="settings-text1">Nationality</div>
+					<div className="settings-text2">{nationality}</div>
+				</div>
+				<button className="settings-button" onClick={() => setEditArea(true)}>
+					<MdIcons.MdModeEditOutline
 						style={{
 							cursor: "pointer",
 						}}
 					/>
+					Edit
 				</button>
+
 				{editArea && <Backdrop onClick={() => setEditArea(false)} />}
-				{editArea && <Modal email={email} phone={phoneNumber} address={address} submit={setEditArea} />}
+				{editArea && <Modal email={email} phone={phoneNumber} address={address} />}
 			</div>
 		</div>
 	);

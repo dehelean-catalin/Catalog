@@ -56,8 +56,8 @@ function Modal(props) {
 	};
 
 	return (
-		<form className="modal-edit-data">
-			<div className="modal-edit-data-title">Change contact</div>
+		<div className="modal-edit-data" style={{ backgroundColor: "rgb(37, 37, 37)" }}>
+			<div className="modal-edit-data-title">Edit</div>
 
 			<input
 				type="text"
@@ -66,8 +66,7 @@ function Modal(props) {
 				value={formValues.inputMail}
 				onChange={handleChange}
 			/>
-			<h2>{formErrors.inputMail}</h2>
-
+			<div className="modal-error">{formErrors.inputMail}</div>
 			<input
 				type="text"
 				className="modal-edit-data-input"
@@ -75,7 +74,7 @@ function Modal(props) {
 				value={formValues.inputPhone}
 				onChange={handleChange}
 			/>
-			<h2>{formErrors.inputPhone}</h2>
+			<div className="modal-error">{formErrors.inputPhone}</div>
 
 			<input
 				type="text"
@@ -84,12 +83,12 @@ function Modal(props) {
 				value={formValues.inputAddress}
 				onChange={handleChange}
 			/>
-			<h2>{formErrors.inputAddress}</h2>
+			<div className="modal-error">{formErrors.inputAddress}</div>
 
 			<button type="submit" className="modal-edit-data-button" onClick={handleSubmit}>
-				ok
+				Submit
 			</button>
-		</form>
+		</div>
 	);
 }
 

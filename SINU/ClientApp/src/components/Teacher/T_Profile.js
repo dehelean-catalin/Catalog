@@ -4,12 +4,12 @@ import * as BiIcons from "react-icons/bi";
 import * as IoIosIcons from "react-icons/io";
 import * as BsIcons from "react-icons/bs";
 import * as MdIcons from "react-icons/md";
-import "../Student/student.css";
+import "../Teacher/teacher.css";
 import Axios from "axios";
 
 function T_Profile() {
 	const [subjectNames, setSubjectNames] = useState({});
-	const [uniqueSubject, setUniqueSubject] = useState();
+
 	const id = JSON.parse(localStorage.getItem("userDetails"))["Id"];
 	const firstName = JSON.parse(localStorage.getItem("userDetails"))["FirstName"];
 	const lastName = JSON.parse(localStorage.getItem("userDetails"))["LastName"];

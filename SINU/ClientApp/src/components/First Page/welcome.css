@@ -1,378 +1,596 @@
 .welcome {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: url("../First Page/images/Background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  position: relative;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-image: url("../First Page/images/Background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+	position: relative;
 }
 .welcome-text {
-  flex-direction: row;
-  color: rgb(255, 183, 1);
-  font-size: 90px;
-  font-weight: 700;
-  text-align: center;
+	flex-direction: row;
+	color: rgb(255, 183, 1);
+	font-size: 90px;
+	font-weight: 700;
+	text-align: center;
 }
 .catalog-text {
-  animation-name: welcomeText;
-  animation-duration: 2s;
-  margin-right: 10px;
+	animation-name: welcomeText;
+	animation-duration: 2s;
+	margin-right: 10px;
 }
 @keyframes welcomeText {
-  from {
-    opacity: 0;
-    transform: translateX(-800px);
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0;
+		transform: translateX(-800px);
+	}
+	to {
+		opacity: 1;
+	}
 }
 .online-text {
-  color: transparent;
-  font-size: 90px;
-  -webkit-text-stroke: 3.2px;
-  -webkit-text-stroke-color: white;
-  animation: welcomeTextRight 2.2s;
+	color: transparent;
+	font-size: 90px;
+	-webkit-text-stroke: 3.2px;
+	-webkit-text-stroke-color: white;
+	animation: welcomeTextRight 2.2s;
 }
 @keyframes welcomeTextRight {
-  from {
-    opacity: 0;
-    transform: translateX(800px);
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0;
+		transform: translateX(800px);
+	}
+	to {
+		opacity: 1;
+	}
 }
-.question {
-  color: rgb(255, 183, 1);
-  font-size: 20px;
-}
+
 .navbar-button-student {
-  width: 105px;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 12px;
-  border: 0;
-  margin-right: 7px;
-  border-radius: 50px;
-  cursor: pointer;
-  transform: translate(-56px, -250px);
-  z-index: 1;
-  position: absolute;
-  animation-name: navbar;
-  animation-duration: 1.6s;
+	position: absolute;
+	padding: 12px 20px;
+	margin-right: 7px;
+	border-radius: 50px;
+	font-weight: 600;
+	font-size: 16px;
+	cursor: pointer;
+	transform: translate(-56px, -250px);
+	animation-name: navbar;
+	animation-duration: 1.6s;
+	z-index: 1;
 }
 @keyframes navbar {
-  from {
-    opacity: 0;
-    transform: translate(-56px, -500px);
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0;
+		transform: translate(-56px, -500px);
+	}
+	to {
+		opacity: 1;
+	}
 }
 .navbar-button-teacher {
-  width: 105px;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 12px;
-  border: 0;
-  margin-left: 7px;
-  border-radius: 50px;
-  transform: translate(56px, -250px);
-  z-index: 1;
-  position: absolute;
-  animation-name: navbar1;
-  animation-duration: 1.6s;
-  cursor: pointer;
+	position: absolute;
+	padding: 12px 20px;
+	margin-left: 7px;
+	border-radius: 50px;
+	font-weight: 600;
+	font-size: 16px;
+	cursor: pointer;
+	transform: translate(56px, -250px);
+	animation-name: navbar1;
+	animation-duration: 1.6s;
+	z-index: 1;
 }
 
 @keyframes navbar1 {
-  from {
-    opacity: 0;
-    transform: translate(56px, -500px);
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0;
+		transform: translate(56px, -500px);
+	}
+	to {
+		opacity: 1;
+	}
 }
+
 .student-card {
-  height: 630px;
-  width: 1000px;
-  border-radius: 12px;
-  box-shadow: 0px 0px 20px black;
-  background-image: url("../First Page/images/Student.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  transition: width 0.6ms;
-  animation-name: studentCard;
-  animation-duration: 1.8s;
-  position: absolute;
+	height: 630px;
+	width: 1000px;
+	border-radius: 12px;
+	box-shadow: 0px 0px 20px black;
+	background-image: url("../First Page/images/Student.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	transition: width 0.6ms;
+	animation-name: studentCard;
+	animation-duration: 1.5s;
+	position: absolute;
 }
 @keyframes studentCard {
-  from {
-    opacity: 0px;
-    transform: translate(-1300px, 0px);
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0px;
+		transform: translate(-1300px, 0px);
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 .student-card-text {
-  display: flex;
-  font-size: 44px;
-  font-weight: 800;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 170px;
-  margin-left: 70px;
-  text-shadow: 2px 2px black;
+	display: flex;
+	font-size: 44px;
+	font-weight: 800;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 170px;
+	margin-left: 70px;
+	text-shadow: 2px 2px black;
 }
 .student-card-buttons {
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-  margin-left: 70px;
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+	margin-left: 70px;
 }
 .student-card-button-login {
-  width: 125px;
-  color: white;
-  font-weight: 700;
-  background-color: transparent;
-  font-size: 20px;
-  padding: 9px;
-  border: 1px solid white;
-  margin-right: 7px;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.7s;
-  animation-name: loginAnimation;
-  animation-duration: 2s;
+	width: 125px;
+	color: white;
+	font-weight: 700;
+	background-color: transparent;
+	font-size: 20px;
+	padding: 9px;
+	border: 1px solid white;
+	margin-right: 7px;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.7s;
+	animation-name: loginAnimation;
+	animation-duration: 2s;
 }
 @keyframes loginAnimation {
-  from {
-    opacity: 0;
-    transform: translate(0, 200px);
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0;
+		transform: translate(0, 200px);
+	}
+	to {
+		opacity: 1;
+	}
 }
 .student-card-button-login:hover {
-  color: rgb(24, 29, 82);
-  background-color: rgb(255, 255, 255);
+	color: rgb(24, 29, 82);
+	background-color: rgb(255, 255, 255);
 }
 .student-card-button-signup {
-  width: 125px;
-  color: rgb(24, 29, 82);
-  font-weight: 700;
-  font-size: 20px;
-  background-color: transparent;
-  padding: 9px;
-  border: 1px solid rgb(24, 29, 82);
-  margin-left: 7px;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.7s;
-  animation-name: signUpAnimation;
-  animation-duration: 2.3s;
+	width: 125px;
+	color: rgb(24, 29, 82);
+	font-weight: 700;
+	font-size: 20px;
+	background-color: transparent;
+	padding: 9px;
+	border: 1px solid rgb(24, 29, 82);
+	margin-left: 7px;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.7s;
+	animation-name: signUpAnimation;
+	animation-duration: 2s;
 }
 @keyframes signUpAnimation {
-  from {
-    opacity: 0;
-    transform: translate(0, 200px);
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0;
+		transform: translate(0, 200px);
+	}
+	to {
+		opacity: 1;
+	}
 }
 .student-card-button-signup:hover {
-  color: rgb(255, 255, 255);
-  background-color: rgb(24, 29, 82);
+	color: rgb(255, 255, 255);
+	background-color: rgb(24, 29, 82);
 }
 
 .teacher-card {
-  height: 630px;
-  width: 1000px;
-  border-radius: 12px;
-  box-shadow: 0px 0px 20px black;
-  background-image: url("../First Page/images/Teacher.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  transition: width 0.6ms;
-  animation-name: teacherCard;
-  animation-duration: 1.8s;
-  position: absolute;
+	height: 630px;
+	width: 1000px;
+	border-radius: 12px;
+	box-shadow: 0px 0px 20px black;
+	background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../First Page/images/Teacher.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	transition: width 0.6ms;
+	animation-name: teacherCard;
+	animation-duration: 1.5s;
+	position: absolute;
 }
 @keyframes teacherCard {
-  from {
-    opacity: 0px;
-    transform: translate(1300px, 0px);
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0px;
+		transform: translate(1300px, 0px);
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 .teacher-card-button-signup {
-  width: 125px;
-  color: rgb(35, 173, 209);
-  font-weight: 700;
-  font-size: 20px;
-  border: 3px solid rgb(35, 173, 209);
-  padding: 9px;
-  background-color: transparent;
-  margin-left: 7px;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.7s;
-  animation-name: signUpAnimation;
-  animation-duration: 2.3s;
+	width: 125px;
+	color: rgb(149, 74, 84);
+	font-weight: 700;
+	font-size: 20px;
+	border: 3px solid rgb(149, 74, 84);
+	padding: 9px;
+	background-color: transparent;
+	margin-left: 7px;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.7s;
+	animation-name: signUpAnimation;
+	animation-duration: 2.3s;
 }
 @keyframes signUpAnimation {
-  from {
-    opacity: 0;
-    transform: translate(0, 200px);
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0;
+		transform: translate(0, 200px);
+	}
+	to {
+		opacity: 1;
+	}
 }
 .teacher-card-button-signup:hover {
-  background-color: rgb(35, 173, 209);
-  color: white;
+	background-color: rgb(149, 74, 84);
+	color: white;
 }
 
 .teacher-card-button-login {
-  width: 125px;
-  color: white;
-  font-weight: 700;
-  font-size: 20px;
-  background-color: transparent;
-  padding: 9px;
-  border: 3px solid white;
-  margin-left: 7px;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.7s;
-  animation-name: signUpAnimation;
-  animation-duration: 2.3s;
+	width: 125px;
+	color: white;
+	font-weight: 700;
+	font-size: 20px;
+	background-color: transparent;
+	padding: 9px;
+	border: 3px solid white;
+	margin-left: 7px;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.7s;
+	animation-name: signUpAnimation;
+	animation-duration: 2.3s;
 }
 .teacher-card-button-login:hover {
-  background-color: white;
-  color: rgb(35, 173, 209);
+	background-color: white;
+	color: rgb(35, 173, 209);
 }
 @keyframes signUpAnimation {
-  from {
-    opacity: 0;
-    transform: translate(0, 200px);
-  }
-  to {
-    opacity: 1;
-  }
+	from {
+		opacity: 0;
+		transform: translate(0, 200px);
+	}
+	to {
+		opacity: 1;
+	}
 }
 
-@media screen and (max-width: 500px) {
-  .student-card {
-    height: 600px;
-    width: 400px;
-  }
-  @keyframes studentCard {
-    from {
-      opacity: 0px;
-      transform: translate(-500px, 0px);
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  .student-card-text {
-    font-size: 38px;
-    color: rgb(255, 183, 1);
-  }
-  .student-card-buttons {
-    align-items: center;
-    margin: 0px;
-    padding: 0;
-    margin-top: 100px;
-    flex-direction: column;
-  }
-  .student-card-button-login {
-    width: 60%;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 0px;
-    margin: 0;
-    margin-bottom: 10px;
-  }
-  .student-card-button-login:hover {
-    background-color: rgb(24, 29, 82);
-    color: white;
-  }
-  .student-card-button-signup {
-    width: 60%;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 0px;
-    margin: 0px;
-  }
-  .student-card-button-signup:hover {
-    background-color: rgb(24, 29, 82);
-  }
-
-  .teacher-card {
-    height: 600px;
-    width: 400px;
-  }
-  @keyframes teacherCard {
-    from {
-      opacity: 0px;
-      transform: translate(500px, 0px);
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  .teacher-card-button-login {
-    width: 60%;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 0px;
-    margin-bottom: 10px;
-  }
-  .teacher-card-button-signup {
-    width: 60%;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 0px;
-  }
-  .teacher-card-button-signup:hover {
-    background-color: white;
-    color: rgb(35, 173, 209);
-  }
+.container {
+	width: auto;
+	height: auto;
 }
 
-@media screen and (min-width: 700px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* REGISTER */
+
+.modal {
+	display: flex;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(35, 35, 35);
+	border-radius: 10px;
+	backdrop-filter: blur(10px);
+	z-index: 10;
+	color: white;
+	padding: 30px 55px 10px 55px;
+	animation-name: loginModal;
+	animation-duration: 1.2s;
+}
+@keyframes loginModal {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -1300px);
+	}
+	to {
+		opacity: 1;
+	}
+}
+.modal-register-title {
+	font-size: 50px;
+	margin-bottom: 30px;
+	font-weight: 700;
+}
+form {
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-@media screen and (min-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.inputRegister {
+	display: flex;
+	height: 45px;
+	width: 330px;
+	color: white;
+	background-color: rgb(69, 69, 69);
+	border-radius: 6px;
+	font-size: 16px;
+	font-weight: 300;
+	border: 0;
+	border-bottom: 2px solid transparent;
+	padding-left: 10px;
 }
-@media screen and (min-width: 1200px) {
-  .grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
+::placeholder {
+	color: #b6b6b6;
+	opacity: 0.6;
+}
+
+.button-sign-up {
+	height: 42px;
+	width: 120px;
+	font-size: 15px;
+	font-weight: 500;
+	background-color: rgb(58, 168, 251);
+	color: white;
+	border: 0px;
+	box-shadow: 0px 0px 10px black;
+	border-radius: 50px;
+}
+.button-sign-up:hover {
+	cursor: pointer;
+	background-color: rgb(58, 168, 251);
+}
+
+.toggleIcon {
+	transform: translate(300px, 35px);
+	position: absolute;
+	cursor: pointer;
+	z-index: 2;
+}
+/*End of REGISTER*/
+
+/*Login*/
+.modalLogin {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background-color: rgb(35, 35, 35);
+	padding: 30px 55px 10px 55px;
+	border-radius: 10px;
+	backdrop-filter: blur(10px);
+	transform: translate(-50%, -50%);
+	animation-name: signupModal;
+	animation-duration: 1s;
+	z-index: 10;
+}
+
+@keyframes signupModal {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -1300px);
+	}
+	to {
+		opacity: 1;
+	}
+}
+.modal-login-title {
+	width: 100%;
+	color: white;
+	text-shadow: 0px 4px 8px black;
+	font-size: 36px;
+	font-weight: 700;
+	margin-bottom: 15px;
+}
+.inputField {
+	display: flex;
+	flex-direction: column-reverse;
+	margin-top: 8px;
+}
+.inputLogin {
+	display: flex;
+	width: 330px;
+	padding: 3px 0px;
+	margin: 3px 0px;
+	color: white;
+	background-color: transparent;
+	border: 0;
+	font-size: 16px;
+	font-weight: 300;
+	border-bottom: 3px solid #b6b6b6;
+}
+::placeholder {
+	font-size: 18px;
+	color: white;
+}
+.inputLogin:focus {
+	border-bottom: 3px solid rgb(58, 168, 251);
+	outline: 0em;
+}
+.inputLogin:focus::placeholder {
+	opacity: 0;
+}
+
+.firstPage-modal-text {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 700;
+	color: white;
+	opacity: 0;
+	transform: translateY(8px);
+	transition: all 0.3s;
+}
+.inputLogin:active,
+:focus ~ .firstPage-modal-text {
+	opacity: 1;
+	transform: translateY(0px);
+}
+.firstPage-modal-error {
+	margin: 0;
+	height: 16px;
+	font-size: 12px;
+	color: red;
+}
+
+.button-login {
+	padding: 11px 32px;
+	margin-top: 6px;
+	font-size: 18px;
+	font-weight: 700;
+	background-color: rgb(58, 168, 251);
+	color: white;
+	border: 0;
+	box-shadow: 0px 0px 10px black;
+	border-radius: 50px;
+}
+.button-login:hover {
+	cursor: pointer;
+}
+.button-login:disabled,
+.button-login[disabled] {
+	cursor: default;
+	opacity: 0.6;
+}
+
+h4 {
+	font-size: 12px;
+	font-weight: 300;
+}
+.sign-up-from-login-modal {
+	background-color: transparent;
+	border: 0;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+	color: white;
+}
+.sign-up-from-login-modal:hover {
+	text-decoration: underline white;
+}
+.password-toggle-icon-from-login {
+	transform: translate(300px, -25px);
+	position: absolute;
+	cursor: pointer;
+	z-index: 2;
+}
+/*END LOGIN*/
+
+.backdrop {
+	position: fixed;
+	z-index: 7;
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	opacity: 0.9;
+	top: 0;
+	left: 0;
+}
+/*End of Section*/
+
+/*MEDIA SCREEN*/
+@media screen and (max-width: 600px) {
+	.student-card {
+		height: 600px;
+		width: 80%;
+	}
+	@keyframes studentCard {
+		from {
+			opacity: 0px;
+			transform: translate(-500px, 0px);
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	.student-card-text {
+		font-size: 38px;
+		color: rgb(255, 183, 1);
+	}
+	.student-card-buttons {
+		align-items: center;
+		margin: 0px;
+		padding: 0;
+		margin-top: 100px;
+		flex-direction: column;
+	}
+	.student-card-button-login {
+		width: 60%;
+		color: white;
+		background-color: rgba(0, 0, 0, 0.8);
+		border: 0px;
+		margin: 0;
+		margin-bottom: 10px;
+	}
+	.student-card-button-login:hover {
+		background-color: rgb(24, 29, 82);
+		color: white;
+	}
+	.student-card-button-signup {
+		width: 60%;
+		color: white;
+		background-color: rgba(0, 0, 0, 0.8);
+		border: 0px;
+		margin: 0px;
+	}
+	.student-card-button-signup:hover {
+		background-color: rgb(24, 29, 82);
+	}
+
+	.teacher-card {
+		height: 600px;
+		width: 400px;
+	}
+	@keyframes teacherCard {
+		from {
+			opacity: 0px;
+			transform: translate(500px, 0px);
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	.teacher-card-button-login {
+		width: 60%;
+		color: white;
+		background-color: rgba(0, 0, 0, 0.7);
+		border: 0px;
+		margin-bottom: 10px;
+	}
+	.teacher-card-button-signup {
+		width: 60%;
+		color: white;
+		background-color: rgba(0, 0, 0, 0.7);
+		border: 0px;
+	}
+	.teacher-card-button-signup:hover {
+		background-color: white;
+		color: rgb(35, 173, 209);
+	}
+}
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+	.student-card {
+		width: 80%;
+	}
+	.teacher-card {
+		width: 80%;
+	}
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+	.student-card {
+		width: 80%;
+	}
+	.teacher-card {
+		width: 80%;
+	}
 }
