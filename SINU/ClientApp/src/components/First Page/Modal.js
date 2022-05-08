@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +13,7 @@ function Modal(props) {
 
 	const [formValues, setFormValues] = useState(initialValues);
 	const [formErrors, setFormErrors] = useState({});
-	const [isSubmit, setIsSubmit] = useState(false);
+	// const [isSubmit, setIsSubmit] = useState(false);
 	const history = useHistory();
 
 	const handleChange = (e) => {
@@ -68,11 +68,11 @@ function Modal(props) {
 		return errors;
 	};
 
-	useEffect(() => {
-		if (isSubmit) {
-			handleSubmit();
-		}
-	}, [isSubmit]);
+	// useEffect(() => {
+	// 	if (isSubmit) {
+	// 		handleSubmit();
+	// 	}
+	// }, [isSubmit]);
 
 	const usePasswordToggle = () => {
 		const [visible, setVisiblity] = useState(false);
@@ -81,7 +81,7 @@ function Modal(props) {
 			<FontAwesomeIcon
 				icon={visible ? faEye : faEyeSlash}
 				onClick={() => setVisiblity((visiblity) => !visiblity)}
-				style={{ fontSize: "24px", color: "gray" }}
+				style={{ fontSize: "22px", color: "gray" }}
 			/>
 		);
 		const InputType = visible ? "text" : "password";
@@ -90,15 +90,15 @@ function Modal(props) {
 	const [PasswordInputType, ToogleIcon] = usePasswordToggle();
 
 	return (
-		<div className="modalLogin">
+		<div className="modal">
 			<form>
-				<div className="modal-login-title">Login</div>
+				<div className="modal-title">Login</div>
 
 				<div className="inputField">
 					<h2 className="firstPage-modal-error">{formErrors.email}</h2>
 					<input
 						type="text"
-						className="inputLogin"
+						className="inputModal"
 						placeholder="Email"
 						name="email"
 						value={formValues.email}
@@ -111,7 +111,7 @@ function Modal(props) {
 					<h2 className="firstPage-modal-error">{formErrors.password}</h2>
 					<input
 						type={PasswordInputType}
-						className="inputLogin"
+						className="inputModal"
 						placeholder="Password"
 						name="password"
 						value={formValues.password}
@@ -120,12 +120,12 @@ function Modal(props) {
 					/>
 					<h1 className="firstPage-modal-text">Password</h1>
 
-					<div className="password-toggle-icon-from-login">{ToogleIcon}</div>
+					<div className="password-toggle-icon">{ToogleIcon}</div>
 				</div>
 
 				<button
 					type="submit"
-					className="button-login"
+					className="modal-button-submit"
 					onClick={handleSubmit}
 					disabled={!formValues.email || !formValues.password}
 				>

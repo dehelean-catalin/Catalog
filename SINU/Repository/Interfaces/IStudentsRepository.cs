@@ -13,5 +13,6 @@ namespace SINU.Repository
         List<Student> GetAll();
         Student GetStudentByUserIdYearId(int userId, int yearId);
         Student Create(Student student);
+        List<Student> GetStudentsByClassId(int id);
     }
 }

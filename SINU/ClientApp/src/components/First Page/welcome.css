@@ -279,7 +279,7 @@
 	height: auto;
 }
 
-/* REGISTER */
+/* Modal */
 
 .modal {
 	display: flex;
@@ -305,11 +305,7 @@
 		opacity: 1;
 	}
 }
-.modal-register-title {
-	font-size: 50px;
-	margin-bottom: 30px;
-	font-weight: 700;
-}
+
 form {
 	color: white;
 	display: flex;
@@ -318,73 +314,7 @@ form {
 	justify-content: center;
 }
 
-.inputRegister {
-	display: flex;
-	height: 45px;
-	width: 330px;
-	color: white;
-	background-color: rgb(69, 69, 69);
-	border-radius: 6px;
-	font-size: 16px;
-	font-weight: 300;
-	border: 0;
-	border-bottom: 2px solid transparent;
-	padding-left: 10px;
-}
-::placeholder {
-	color: #b6b6b6;
-	opacity: 0.6;
-}
-
-.button-sign-up {
-	height: 42px;
-	width: 120px;
-	font-size: 15px;
-	font-weight: 500;
-	background-color: rgb(58, 168, 251);
-	color: white;
-	border: 0px;
-	box-shadow: 0px 0px 10px black;
-	border-radius: 50px;
-}
-.button-sign-up:hover {
-	cursor: pointer;
-	background-color: rgb(58, 168, 251);
-}
-
-.toggleIcon {
-	transform: translate(300px, 35px);
-	position: absolute;
-	cursor: pointer;
-	z-index: 2;
-}
-/*End of REGISTER*/
-
-/*Login*/
-.modalLogin {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	background-color: rgb(35, 35, 35);
-	padding: 30px 55px 10px 55px;
-	border-radius: 10px;
-	backdrop-filter: blur(10px);
-	transform: translate(-50%, -50%);
-	animation-name: signupModal;
-	animation-duration: 1s;
-	z-index: 10;
-}
-
-@keyframes signupModal {
-	from {
-		opacity: 0;
-		transform: translate(-50%, -1300px);
-	}
-	to {
-		opacity: 1;
-	}
-}
-.modal-login-title {
+.modal-title {
 	width: 100%;
 	color: white;
 	text-shadow: 0px 4px 8px black;
@@ -397,7 +327,7 @@ form {
 	flex-direction: column-reverse;
 	margin-top: 8px;
 }
-.inputLogin {
+.inputModal {
 	display: flex;
 	width: 330px;
 	padding: 3px 0px;
@@ -413,11 +343,18 @@ form {
 	font-size: 18px;
 	color: white;
 }
-.inputLogin:focus {
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	transition: background-color 5000s ease-in-out 0s;
+	-webkit-text-fill-color: white !important;
+}
+.inputModal:focus {
 	border-bottom: 3px solid rgb(58, 168, 251);
 	outline: 0em;
 }
-.inputLogin:focus::placeholder {
+.inputModal:focus::placeholder {
 	opacity: 0;
 }
 
@@ -430,7 +367,7 @@ form {
 	transform: translateY(8px);
 	transition: all 0.3s;
 }
-.inputLogin:active,
+.inputModal:active,
 :focus ~ .firstPage-modal-text {
 	opacity: 1;
 	transform: translateY(0px);
@@ -442,7 +379,7 @@ form {
 	color: red;
 }
 
-.button-login {
+.modal-button-submit {
 	padding: 11px 32px;
 	margin-top: 6px;
 	font-size: 18px;
@@ -453,11 +390,11 @@ form {
 	box-shadow: 0px 0px 10px black;
 	border-radius: 50px;
 }
-.button-login:hover {
+.modal-button-submit:hover {
 	cursor: pointer;
 }
-.button-login:disabled,
-.button-login[disabled] {
+.modal-button-submit:disabled,
+.modal-button-submit[disabled] {
 	cursor: default;
 	opacity: 0.6;
 }
@@ -477,13 +414,16 @@ h4 {
 .sign-up-from-login-modal:hover {
 	text-decoration: underline white;
 }
-.password-toggle-icon-from-login {
+.password-toggle-icon {
 	transform: translate(300px, -25px);
 	position: absolute;
 	cursor: pointer;
 	z-index: 2;
 }
-/*END LOGIN*/
+.password-toggle-icon #register {
+	transform: translate(300px, -55px);
+}
+/*END Modal*/
 
 .backdrop {
 	position: fixed;

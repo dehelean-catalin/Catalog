@@ -24,12 +24,7 @@ export const NavBarDataTeacher = [
 		icon: <AiIcons.AiFillSetting style={{ fontSize: "32px" }} />,
 		cName: "nav-text-teacher",
 	},
-	{
-		title: "Help",
-		path: "/teacher/help",
-		icon: <BiIcons.BiHelpCircle style={{ fontSize: "32px" }} />,
-		cName: "nav-text-teacher",
-	},
+
 	{
 		title: "Log out",
 		path: "/",

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 function Modal(props) {
 	const initialValues = {
@@ -38,7 +38,7 @@ function Modal(props) {
 	const validate = (values) => {
 		const errors = {};
 		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-		const isNumber = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+		const isNumber = /^[(]?[0-9]{3}[)]?[-\s]?[0-9]{3}[-\s]?[0-9]{4,6}$/im;
 		if (!values.inputMail) {
 			errors.inputMail = "Data is required!";
 		} else if (!regex.test(values.inputMail)) {

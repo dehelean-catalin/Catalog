@@ -20,7 +20,7 @@ function T_Settings() {
 			<NavBar />
 			<div className="settings-container">
 				<div className="settings-container-row">
-					<img className="settings-img-teacher" />
+					<img className="settings-img-teacher" alt="" />
 					<div className="settings-text1">Name</div>
 
 					<div className="settings-text2">
@@ -29,32 +29,32 @@ function T_Settings() {
 				</div>
 
 				<div className="settings-container-row">
-					<img className="settings-img-teacher" />
+					<img className="settings-img-teacher" alt="" />
 					<div className="settings-text1">Email</div>
 
 					<div className="settings-text2">{email}</div>
 				</div>
 
 				<div className="settings-container-row">
-					<img className="settings-img-teacher" />
+					<img className="settings-img-teacher" alt="" />
 					<div className="settings-text1">Id</div>
 					<div className="settings-text2">{idcnp}</div>
 				</div>
 
 				<div className="settings-container-row">
-					<img className="settings-img-teacher" />
+					<img className="settings-img-teacher" alt="" />
 					<div className="settings-text1">Phone</div>
 					<div className="settings-text2">{phoneNumber}</div>
 				</div>
 
 				<div className="settings-container-row">
-					<img className="settings-img-teacher" />
+					<img className="settings-img-teacher" alt="" />
 					<div className="settings-text1">Address</div>
 					<div className="settings-text2">{address}</div>
 				</div>
 
 				<div className="settings-container-row">
-					<img className="settings-img-teacher" />
+					<img className="settings-img-teacher" alt="" />
 					<div className="settings-text1">Nationality</div>
 					<div className="settings-text2">{nationality}</div>
 				</div>

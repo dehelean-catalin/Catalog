@@ -28,31 +28,37 @@ namespace SINU.Controllers
         [HttpPost("register")]
         public IActionResult Register(RegisterDTO dto)
         {
-            var user = usersRepository.GetUserByIDNP(dto.IDNP);
-            if (user != null)
+            if (usersRepository.VerifyUniqueEmail(dto.Email))
             {
-                if (user.IDNP == user.Email)
+                var user = usersRepository.GetUserByIDNP(dto.IDNP);
+                if (user != null)
                 {
-                    var registeredUser = usersRepository.Register(mapper.Map<User>(dto));
-                    if (registeredUser != null)
+                    if (user.IDNP == user.Email)
                     {
-                        return Ok(mapper.Map<UserInfoDTO>(registeredUser));
+                        var registeredUser = usersRepository.Register(mapper.Map<User>(dto));
+                        if (registeredUser != null)
+                        {
+                            return Ok(mapper.Map<UserInfoDTO>(registeredUser));
+                        }
+                        else
+                        {
+                            return BadRequest("Error on registering. Try again.");
+                        }
                     }
                     else
                     {
-                        return BadRequest("something went wrong on registering. (User not found)");
+                        return BadRequest("User is already registered.");
                     }
                 }
                 else
                 {
-                    return BadRequest($"User is already registered with IDNP {dto.IDNP}.");
+                    return NotFound("User with IDNP not found.");
                 }
             }
             else
             {
-                return NotFound("User not found");
+                return BadRequest("Email is already used.");
             }
-
         }
 
 
@@ -60,8 +66,8 @@ namespace SINU.Controllers
         public IActionResult Login(LoginDTO dto)
         {
             var user = usersRepository.GetUserByEmail(dto.Email);
-            if (user == null) return NotFound( "User not found/registerd." );
-            if (user.Password != dto.Password) return BadRequest("Incorrect password" );
+            if (user == null) return NotFound("User not registered.");
+            if (user.Password != dto.Password) return BadRequest("Incorrect password.");
             return Ok(mapper.Map<UserInfoDTO>(user));
         }
     }

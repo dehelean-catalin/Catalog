@@ -42,7 +42,7 @@ namespace SINU.Controllers
             }
             else
             {
-                return NotFound(new { message = "Grades not found." });
+                return NotFound("Grades not found.");
             }
         }
 
@@ -58,9 +58,27 @@ namespace SINU.Controllers
             else
             {
                 //return BadRequest("There is no class with id = " + id);
-                return NotFound(new { message = $"Grades not found for StudentId {id} not found." });
+                return NotFound($"Grades not found for StudentId {id} not found.");
             }
         }
+
+        [HttpGet("/{subjectId}/{studentId}")]
+        public IActionResult GetGradesPerSubjectByStudentId(int studentId, int subjectId)
+        {
+            var gradesList = gradesRepository.GetGradesPerSubjectByStudentId(studentId, subjectId).ConvertAll(s => mapper.Map<GradeInfoDTO>(s));
+            if (gradesList != null)
+            {
+                return Ok(gradesList);
+            }
+            else
+            {
+                //return BadRequest("There is no class with id = " + id);
+                return NotFound($"Grades not found.");
+            }
+        }
+
+
+
 
         [HttpGet("/teacher/{id}")]
         public IActionResult GetGradesByProfessorId(int id)
@@ -73,7 +91,7 @@ namespace SINU.Controllers
             else
             {
                 //return BadRequest("There is no class with id = " + id);
-                return NotFound(new { message = $"Grades not found for ProfesorId {id}." });
+                return NotFound($"Grades not found for ProfesorId {id}.");
             }
         }
 
@@ -88,9 +106,12 @@ namespace SINU.Controllers
             else
             {
                 //return BadRequest("There is no class with id = " + id);
-                return NotFound(new { message = $"Grade not found for Id {id}." });
+                return NotFound($"Grade not found for Id {id}.");
             }
         }
+
+
+
 
         [HttpGet("{id}/Detailed")]
         public IActionResult GetGradeDetailedById(int id)
@@ -103,7 +124,7 @@ namespace SINU.Controllers
             else
             {
                 //return BadRequest("There is no class with id = " + id);
-                return NotFound(new { message = $"Grade not found for Id {id}." });
+                return NotFound($"Grade not found for Id {id}.");
             }
         }
 

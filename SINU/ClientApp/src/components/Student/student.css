@@ -1,113 +1,126 @@
 /*PROFILE SECTION*/
-.profileContainer {
+.student-profile {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
-	padding: 0;
-	margin: 0;
-	background-color: rgb(14, 14, 14);
 }
-.cardContainer {
-	width: 740px;
+.student-profile-container {
+	width: 100%;
+	padding-bottom: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border-radius: 20px;
-	margin: 0 auto;
-	box-shadow: 3px 3px 12px;
-	background-image: url("./img/triunghi.jpg");
-	background-size: 750px 550px;
-	background-repeat: no-repeat;
+	background-color: #0e0e0e;
+	overflow-y: scroll;
 }
-.cardTop {
-	width: 100%;
-	height: 42.5%;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	border-bottom: 5px solid black;
-	z-index: 1;
-	background: none;
-}
-.cardButtom {
-	width: 100%;
-	height: 56.5%;
+.student-profile-container-name {
 	display: flex;
-	flex-direction: column-reverse;
-	border-bottom-left-radius: 20px;
-	border-bottom-right-radius: 20px;
+	align-items: center;
+	justify-content: space-between;
+
+	background-color: rgb(37, 37, 37);
+	background: radial-gradient(circle 300px at 0% 100%, rgb(58, 168, 251) 90%, rgb(37, 37, 37) 90.4%);
+	margin: 5px;
+	color: white;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 15px 24px;
+	margin-top: 80px;
+	border-radius: 4px;
+}
+
+.circle {
+	visibility: hidden;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin: 0;
+	background-color: black;
+}
+.student-profile-details {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: end;
+	width: auto;
+}
+.edit-logout-buttons {
+	padding: 0;
+	margin-top: 0px;
+}
+.edit-button {
+	background-color: rgb(58, 168, 251);
+	width: 40%;
+	border: 0;
+	padding: 8px 12px;
+	margin-left: 12px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.6s;
+}
+.edit-button:hover {
 	background-color: white;
 }
-.ProfilePic {
-	width: 280px;
-	height: 280px;
-	background-color: rgb(1, 140, 166);
-	border-radius: 50%;
-	top: 25%;
-	left: 30.5%;
-	display: block;
-	z-index: 5;
-	box-shadow: 2px 2px 10px;
-	transform: translate(45px, 105px);
+.edit-button:hover .Link {
+	color: rgb(37, 37, 37);
 }
-.cardDetails {
-	height: 110px;
-	display: grid;
-	grid-template-columns: auto auto auto;
-	text-align: center;
-	color: rgb(47, 47, 47);
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 28px;
-	font-weight: 700;
-	border-top: 3.6px solid rgb(209, 209, 209);
-}
-
-.studentName {
-	text-align: end;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 600;
-	font-size: 35px;
-	margin-right: 65px;
-	margin-bottom: 150px;
-	margin-top: 20px;
-}
-
-.studentEmail {
-	font-weight: 500;
+.Link {
+	color: white;
+	text-decoration: none;
 	font-size: 18px;
+	font-weight: 500;
+	transition: all 0.6s;
+}
+details {
+	width: 35%;
+	background-color: rgb(37, 37, 37);
+	margin: 5px;
+	color: white;
+	font-size: 20px;
+	font-weight: 500;
+	padding: 16px 24px;
+	border-bottom: 2px solid gray;
+	border-radius: 4px;
+}
+details:hover {
+	border-color: white;
+}
+summary {
+	list-style: none;
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 24px;
+	font-weight: 700;
+}
+summary:hover {
+	cursor: pointer;
+}
+.arrow {
+	opacity: 0.6;
+}
+summary:hover .arrow {
+	opacity: 1;
+}
+.student-profile-container-details {
+	font-size: 18px;
+	font-weight: 500;
+	border-top: 1px solid gray;
+	transition-delay: 0.4s;
+}
 
-	flex-direction: row-reverse;
-	margin-top: 0px;
-	margin-left: 350px;
-	justify-content: center;
-	align-items: center;
-}
-.grid-item {
+.details-paragraph {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	padding: 0px 40px;
+	margin: 8px;
+	background-color: rgb(27, 27, 27);
 }
-.line {
-	padding-top: 5px;
-	transform: translateX(-5px);
-	color: rgb(7, 77, 135);
-	font-size: 23px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	font-weight: 550;
+#student {
+	color: rgb(58, 168, 251);
+	margin: 10px;
+	font-weight: 700;
 }
-.grid-item2 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	border-left: 3.6px solid rgb(209, 209, 209);
-	border-right: 3.6px solid rgb(209, 209, 209);
-}
-
 /*GRADES SECTION*/
 
 .grades {
@@ -149,12 +162,12 @@
 }
 .grades-png {
 	width: 90px;
-	z-index: 1;
 	transform: translateY(80px);
-	transition: all 0.5s;
+	transition: all 0.2s;
 }
 .grades-card:hover .grades-png {
-	transform: translateY(30px);
+	transform: translateY(80px);
+	opacity: 1;
 }
 .grades-container-subject-name {
 	font-size: 30px;
@@ -167,7 +180,7 @@
 	opacity: 0;
 	font-size: 18px;
 	color: white;
-	transform: translateY(145px);
+	transform: translateY(160px);
 	transition: all 0.6s;
 }
 .grades-container-marks {
@@ -175,21 +188,46 @@
 	align-items: center;
 	opacity: 0;
 	color: white;
+	transform: translateY(105px);
+	transition: all 0.4s;
+}
+
+.grades-container-finalAverege {
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	opacity: 0;
 	transform: translateY(160px);
 	transition: all 0.6s;
 }
+.average {
+	margin: 0px 5px;
+	padding: 3px 6px;
+	background-color: white;
+	border-radius: 3px;
+	font-weight: 600;
+}
 
+.grades-card:hover .grades-container-message {
+	opacity: 1;
+	transform: translateY(120px);
+}
 .grades-card:hover .grades-container-subject-name {
 	opacity: 1;
 	transform: translateY(60px);
 }
 .grades-card:hover .grades-container-marks {
 	opacity: 1;
-	transform: translateY(90px);
+	transform: translateY(90px) !important;
 }
 .grades-card:hover .grades-container-teacher-name {
 	opacity: 1;
 	transform: translateY(75px);
+}
+.grades-card:hover .grades-container-finalAverege {
+	cursor: pointer;
+	opacity: 1;
+	transform: translateY(105px);
 }
 
 /*Settings*/
@@ -360,7 +398,12 @@
 }
 /*End of Help*/
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 400px) and (max-width: 580px) {
+	.student-profile-container-name {
+		width: 80%;
+		background: radial-gradient(circle 300px at 0% 100%, rgb(58, 168, 251) 60%, rgb(37, 37, 37) 60.4%);
+	}
+
 	.grid {
 		grid-template-columns: repeat(1, 1fr);
 		grid-template-rows: repeat(13, 350px);
@@ -379,6 +422,10 @@
 	}
 }
 @media screen and (min-width: 580px) {
+	.student-profile-container-name {
+		width: 80%;
+		background: radial-gradient(circle 300px at 0% 100%, rgb(58, 168, 251) 60%, rgb(37, 37, 37) 60.4%);
+	}
 	.grid {
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(7, 350px);
@@ -410,6 +457,9 @@
 	}
 }
 @media screen and (min-width: 1350px) {
+	.student-profile-container-name {
+		width: 50%;
+	}
 	.grid {
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(3, 350px);

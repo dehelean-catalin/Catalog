@@ -36,5 +36,11 @@ namespace SINU.Repository
         {
             return _context.SubjectsClass.Include(s => s.Subject).Include(s => s.SubjectProfesor).ThenInclude(s => s.User).Where(s => s.ClassId == id).ToList();
         }
+
+        public List<SubjectClass> GetSubjectClassesBySubjectProfessorId(int id)
+        {
+            return _context.SubjectsClass.Include(s => s.Subject).Include(s => s.SubjectProfesor).ThenInclude(s => s.User).Where(s => s.SubjectProfesorId == id).ToList();
+
+        }
     }
 }

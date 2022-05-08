@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SINU.DTO;
@@ -30,7 +31,7 @@ namespace SINU.Controllers
             }
             else
             {
-                return NotFound(new { message = "Users not found." });
+                return NotFound("Users not found.");
             }
         }
 
@@ -45,7 +46,7 @@ namespace SINU.Controllers
             else
             {
                 //return BadRequest("There is no class with id = " + id);
-                return NotFound(new { message = $"User with id {id} not found." });
+                return NotFound($"User with id {id} not found.");
             }
         }
 
@@ -62,7 +63,22 @@ namespace SINU.Controllers
             }
             else
             {
-                return BadRequest(new { message = "Can't create user." });
+                return BadRequest("Can't create user.");
+            }
+        }
+
+        [HttpPost("UniqueEmail")]
+        public IActionResult VerifyEmail(string email)
+        {
+
+            if (usersRepository.VerifyUniqueEmail(email))
+            {
+                return Ok();
+                //return Ok(new UserInfoDTO(user));
+            }
+            else
+            {
+                return BadRequest("Email isn't unique.");
             }
         }
 
@@ -74,8 +90,31 @@ namespace SINU.Controllers
             if (user != null)
             {
                 user.Address = dto.Address;
-                user.Email = dto.Email;
-                user.Phone = dto.Phone;
+
+                if (user.Email != dto.Email)
+                {
+                    if (usersRepository.VerifyUniqueEmail(dto.Email))
+                    {
+                        user.Email = dto.Email;
+                    }
+                    else
+                    {
+                        return BadRequest("Email isn't unique.");
+                    }
+                }
+
+                if (user.Phone != dto.Phone)
+                {
+                    if (usersRepository.VerifyUniquePhone(dto.Phone))
+                    {
+                        user.Phone = dto.Phone;
+                    }
+                    else
+                    {
+                        return BadRequest("Phone number isn't unique.");
+                    }
+                }
+
                 var updatedUser = usersRepository.UpdateSettings(user); ;
                 if (updatedUser != null)
                 {
@@ -83,12 +122,12 @@ namespace SINU.Controllers
                 }
                 else
                 {
-                    return BadRequest("something went wrong on updating. (User not updated)");
+                    return BadRequest("Error. User not updated.");
                 }
             }
             else
             {
-                return BadRequest("something went wrong on updating. (User not found)");
+                return BadRequest("User not found.");
             }
 
         }
@@ -109,7 +148,7 @@ namespace SINU.Controllers
                     }
                     else
                     {
-                        return BadRequest("Something went wrong on password updating. (User not updated)");
+                        return BadRequest("error. Password doesn't change.");
                     }
                 }
                 else
@@ -119,7 +158,39 @@ namespace SINU.Controllers
             }
             else
             {
-                return BadRequest("Something went wrong on updating. (User not found)");
+                return BadRequest("User not found.");
+            }
+
+        }
+
+        [HttpPost("{IDNP_or_Email}/Status")]
+        public IActionResult GetRegisterStatus(string IDNP_or_Email)
+        {
+            if (IDNP_or_Email.Contains('@'))
+            {
+                var user = usersRepository.GetUserByEmail(IDNP_or_Email);
+                if (user != null)
+                {
+                    //return Ok($"{{Registered: true, Role: {user.Role} }");
+                    return Ok(new StatusDTO { UserId = user.Id, Registered = !(user.Email == user.IDNP), Role = user.Role });
+                }
+                else
+                {
+                    return BadRequest($"User with Email {IDNP_or_Email} not found.");
+                }
+            }
+            else
+            {
+                var user = usersRepository.GetUserByIDNP(IDNP_or_Email);
+                if (user != null)
+                {
+                    //return Ok($"{{Registered: true, Role: {user.Role} }");
+                    return Ok(new StatusDTO { UserId = user.Id, Registered = !(user.Email == user.IDNP), Role = user.Role });
+                }
+                else
+                {
+                    return BadRequest($"User with IDNP {IDNP_or_Email} not found.");
+                }
             }
 
         }

@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 using SINU.Data;
 using SINU.Model;
 
-namespace SINU.Repository { 
+namespace SINU.Repository
+{
     public interface IClassesRepository
     {
         Class GetClassById(int id);
         List<Class> GetAll();
-   
+
         Class Create(Class Class);
     }
 }

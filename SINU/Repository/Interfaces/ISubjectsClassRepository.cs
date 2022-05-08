@@ -10,5 +10,6 @@ namespace SINU.Repository
 
         SubjectClass Create(SubjectClass subjectClass);
         List<SubjectClass> GetSubjectClassByClassId(int id);
+        List<SubjectClass> GetSubjectClassesBySubjectProfessorId(int id);
     }
 }

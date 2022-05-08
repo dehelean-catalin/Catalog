@@ -43,5 +43,9 @@ namespace SINU.Repository
 
         }
 
+        public List<Student> GetStudentsByClassId(int id)
+        {
+            return _context.Students.Include(s => s.StudyYear).Include(s => s.User).Include(s => s.Class).Where(s => s.ClassId == id).ToList();
+        }
     }
 }

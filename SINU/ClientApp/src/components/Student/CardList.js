@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "./Card";
 const CardList = ({ subjectList, subjectGrades }) => {
-	console.log(subjectList);
-	const cardsArray = subjectList.map((subject) => (
+	const cardsArray = subjectList.map((subject, index) => (
 		<Card
+			key={index}
 			grades={subjectGrades
 				.filter(function (grade) {
 					return grade.SubjectId === subject.SubjectId;

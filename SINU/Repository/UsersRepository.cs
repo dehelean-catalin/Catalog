@@ -33,7 +33,7 @@ namespace SINU.Repository
             {
                 existingUser.Email = user.Email;
                 existingUser.Password = user.Password;
-                existingUser.Username = user.Username;
+                //existingUser.Username = user.Username;
                 _context.Users.Update(existingUser);
                 _context.SaveChanges();
                 return existingUser;
@@ -94,6 +94,27 @@ namespace SINU.Repository
         public User GetUserByIDNP(string idnp)
         {
             return _context.Users.FirstOrDefault(u => u.IDNP == idnp);
+        }
+
+        public User GetUserByPhone(string phone)
+        {
+            return _context.Users.FirstOrDefault(u => u.Phone == phone);
+        }
+
+        public bool VerifyUniqueEmail(string email)
+        {
+            if (GetUserByEmail(email) != null)
+                return false;
+            else
+                return true;
+        }
+
+        public bool VerifyUniquePhone(string phone)
+        {
+            if (GetUserByPhone(phone) != null)
+                return false;
+            else
+                return true;
         }
     }
 }

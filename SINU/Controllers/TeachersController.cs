@@ -12,14 +12,17 @@ namespace SINU.Controllers
         private readonly ISubjectsProfesorRepository subjectsProfesorRepository;
         private readonly IUsersRepository usersRepository;
         private readonly ISubjectsRepository subjectsRepository;
+        private readonly ISubjectsClassRepository subjectsClassRepository;
         private readonly IMapper mapper;
 
 
-        public TeachersController(ISubjectsProfesorRepository subjectsProfesorRepository, IUsersRepository usersRepository, ISubjectsRepository subjectsRepository, IMapper mapper)
+        public TeachersController(ISubjectsProfesorRepository subjectsProfesorRepository, IUsersRepository usersRepository,
+                         ISubjectsRepository subjectsRepository, ISubjectsClassRepository subjectsClassRepository, IMapper mapper)
         {
             this.subjectsProfesorRepository = subjectsProfesorRepository;
             this.usersRepository = usersRepository;
             this.subjectsRepository = subjectsRepository;
+            this.subjectsClassRepository = subjectsClassRepository;
             this.mapper = mapper;
         }
 
@@ -69,6 +72,12 @@ namespace SINU.Controllers
                     .ConvertAll(x => mapper.Map<SubjectProfesorDTO>(x));
                 if (subjectProfesorDTOList.Count > 0)
                 {
+                    foreach (SubjectProfesorDTO subject in subjectProfesorDTOList)
+                    {
+                        subject.ClassIds = subjectsClassRepository.GetSubjectClassesBySubjectProfessorId(subject.SubjectProfesorId).ConvertAll(s => s.ClassId);
+                    }
+
+
                     return Ok(subjectProfesorDTOList);
                 }
                 else

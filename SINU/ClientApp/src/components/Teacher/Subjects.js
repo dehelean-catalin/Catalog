@@ -4,8 +4,10 @@ import List from "./List";
 import Axios from "axios";
 function Subjects() {
 	const [subjectName, setSubjectName] = useState({});
+
 	useEffect(() => {
-		Axios.get(`https://localhost:44328/api/Teachers/1013/Subjects`).then((response) => {
+		const id = JSON.parse(localStorage.getItem("userDetails"))["Id"];
+		Axios.get(`https://localhost:44328/api/Teachers/${id}/Subjects`).then((response) => {
 			localStorage.setItem("teacherSubjects", JSON.stringify(response.data));
 			setSubjectName(response.data);
 		});
@@ -15,7 +17,7 @@ function Subjects() {
 		<div className="subjects">
 			<NavBarTeacher />
 			<div className="subjects-container">
-				{Object.keys(subjectName).length != 0 && <List subjectName={subjectName} />}
+				{Object.keys(subjectName).length !== 0 && <List subjectName={subjectName} />}
 			</div>
 		</div>
 	);

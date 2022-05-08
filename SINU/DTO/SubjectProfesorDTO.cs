@@ -1,4 +1,5 @@
-﻿using SINU.Model;
+﻿using System.Collections.Generic;
+using SINU.Model;
 
 namespace SINU.DTO
 {
@@ -10,6 +11,7 @@ namespace SINU.DTO
         public string SubjectName { get; set; }
         public int StudyYearId { get; set; }
         public string StudyYearName { get; set; }
+        public List<int> ClassIds { get; set; }
 
         //public SubjectProfesorDTO() { }
         //public SubjectProfesorDTO(SubjectProfesor subjectProfesor)

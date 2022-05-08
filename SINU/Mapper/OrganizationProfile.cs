@@ -41,6 +41,13 @@ namespace SINU.Mapper
                 .ForMember(dest => dest.TeacherLastName, opt => opt.MapFrom(src => src.SubjectProfesor.User.LastName))
                 .ReverseMap();
 
+            CreateMap<SubjectClass, GradesPerSubjectDTO>()
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Subject.Name))
+                .ForMember(dest => dest.About, opt => opt.MapFrom(src => src.Subject.About))
+                .ForMember(dest => dest.TeacherFirstName, opt => opt.MapFrom(src => src.SubjectProfesor.User.FirstName))
+                .ForMember(dest => dest.TeacherLastName, opt => opt.MapFrom(src => src.SubjectProfesor.User.LastName))
+                .ReverseMap();
+
 
             CreateMap<Student, StudentDTO>()
                 .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.User.FirstName))
@@ -48,6 +55,13 @@ namespace SINU.Mapper
                 .ForMember(dest => dest.ClassName, opt => opt.MapFrom(src => src.Class.GetFullName()))
                 .ForMember(dest => dest.StudyYearName, opt => opt.MapFrom(src => src.StudyYear.Year))
                 .ReverseMap();
+
+            CreateMap<Student, StudentGradesDTO>()
+                .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.User.FirstName))
+                .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.User.LastName))
+                .ForMember(dest => dest.StudentId, opt => opt.MapFrom(src => src.Id))
+                .ReverseMap();
+
 
 
             CreateMap<GradeInfo, GradeInfoDTO>()
@@ -60,10 +74,17 @@ namespace SINU.Mapper
                 //.ForMember(dest => dest.MentorLastName, opt => opt.MapFrom(src => src.Mentor.LastName))
                 .ReverseMap();
 
+            CreateMap<GradeInfo, GradeMinimalisticDTO>()
+                .ForMember(dest => dest.GradeId, opt => opt.MapFrom(src => src.Id))
+                .ReverseMap();
+
             CreateMap<GradeCreateDTO, GradeInfo>()
                 //.ForMember(dest => dest.TeacherFirstName, opt => opt.MapFrom(src => src.Teacher.FirstName))
                 //.ForMember(dest => dest.TeacherLastName, opt => opt.MapFrom(src => src.Teacher.LastName))
                 .ReverseMap();
+
+
+
 
             CreateMap<SubjectProfesor, SubjectProfesorDTO>()
                 .ForMember(dest => dest.SubjectName, opt => opt.MapFrom(src => src.Subject.Name))
