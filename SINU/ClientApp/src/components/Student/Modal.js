@@ -28,6 +28,7 @@ function Modal(props) {
 				.then((response) => {
 					console.log(response.data);
 					localStorage.setItem("userDetails", JSON.stringify(response.data));
+					props.editArea(false);
 				})
 				.catch((error) => {
 					console.log(error.response.data);
@@ -57,7 +58,7 @@ function Modal(props) {
 
 	return (
 		<div className="modal-edit-data" style={{ backgroundColor: "rgb(37, 37, 37)" }}>
-			<div className="modal-edit-data-title">Edit</div>
+			<h1 className="modal-edit-data-title">Edit</h1>
 
 			<input
 				type="text"

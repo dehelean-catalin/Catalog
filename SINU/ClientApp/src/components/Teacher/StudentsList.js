@@ -40,18 +40,7 @@ function StudentsList(props) {
 
 	var grade = parseInt(inputGrade);
 	const handleSubmit = () => {
-		// console.log("student id:");
-		// console.log(studentId);
-		// console.log("grade:");
-		// console.log(inputGrade);
-		// console.log("prof id:");
-		// console.log(props.subjectProfesorId);
-		// console.log("subject id:");
-		// console.log(props.subjectId);
-		console.log(inputGrade);
-
 		if (inputGrade && !isNaN(inputGrade) && grade > 1 && grade <= 10) {
-			console.log("haha");
 			Axios.post("https://localhost:44328/api/Grades", {
 				studentId: studentId,
 				grade: inputGrade,

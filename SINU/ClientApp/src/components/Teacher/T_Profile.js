@@ -10,11 +10,16 @@ import Axios from "axios";
 function T_Profile() {
 	const [subjectNames, setSubjectNames] = useState({});
 
+	if (localStorage.getItem("userDetails") === null) {
+		console.log("aaaaa");
+		window.location.href = "/";
+	}
 	const firstName = JSON.parse(localStorage.getItem("userDetails"))["FirstName"];
 	const lastName = JSON.parse(localStorage.getItem("userDetails"))["LastName"];
 	const mail = JSON.parse(localStorage.getItem("userDetails"))["Email"];
 	const phone = JSON.parse(localStorage.getItem("userDetails"))["Phone"];
 	const username = JSON.parse(localStorage.getItem("userDetails"))["Username"];
+
 	useEffect(() => {
 		const id = JSON.parse(localStorage.getItem("userDetails"))["Id"];
 		Axios.get(`https://localhost:44328/api/Teachers/${id}/Subjects`).then((response) => {
@@ -38,8 +43,7 @@ function T_Profile() {
 
 	const [toogle, setToogle] = useState(true);
 	const [toogle1, setToogle1] = useState(true);
-	const [toogle2, setToogle2] = useState(true);
-	console.log(subjname);
+
 	return (
 		<div className="teacher-profile">
 			<NavBarTeacher />

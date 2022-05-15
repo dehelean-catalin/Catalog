@@ -4,7 +4,10 @@ import List from "./List";
 import Axios from "axios";
 function Subjects() {
 	const [subjectName, setSubjectName] = useState({});
-
+	if (localStorage.getItem("userDetails") === null) {
+		console.log("aaaaa");
+		window.location.href = "/";
+	}
 	useEffect(() => {
 		const id = JSON.parse(localStorage.getItem("userDetails"))["Id"];
 		Axios.get(`https://localhost:44328/api/Teachers/${id}/Subjects`).then((response) => {

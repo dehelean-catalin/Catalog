@@ -6,7 +6,10 @@ import Backdrop from "../First Page/Backdrop";
 
 function T_Settings() {
 	const [editArea, setEditArea] = useState(false);
-
+	if (localStorage.getItem("userDetails") === null) {
+		console.log("aaaaa");
+		window.location.href = "/";
+	}
 	const firstName = JSON.parse(localStorage.getItem("userDetails"))["FirstName"];
 	const lastName = JSON.parse(localStorage.getItem("userDetails"))["LastName"];
 	const idcnp = JSON.parse(localStorage.getItem("userDetails"))["IDNP"];

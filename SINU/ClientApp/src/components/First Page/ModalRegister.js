@@ -6,7 +6,6 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 function ModalRegister(props) {
 	const url = "https://localhost:44328/api/register";
-
 	const initialValues = {
 		email: "",
 		password: "",
@@ -15,7 +14,6 @@ function ModalRegister(props) {
 	};
 	const [formValues, setFormValues] = useState(initialValues);
 	const [formErrors, setFormErrors] = useState({});
-	// const [isSubmit, setIsSubmit] = useState(false);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -24,8 +22,6 @@ function ModalRegister(props) {
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// setIsSubmit(true);
-
 		if (Object.keys(validate(formValues)).length === 0) {
 			Axios.post(url, {
 				Email: formValues.email,
@@ -34,6 +30,8 @@ function ModalRegister(props) {
 			})
 				.then((response) => {
 					console.log(response.data);
+					props.closeSignUp(false);
+					props.openLogin(true);
 				})
 				.catch((err) => {
 					formErrors.IDNP = "";
@@ -52,13 +50,6 @@ function ModalRegister(props) {
 		}
 		setFormErrors(validate(formValues));
 	};
-
-	// useEffect(() => {
-	// 	console.log(formErrors);
-	// 	if (Object.keys(formErrors).length === 0 && isSubmit) {
-	// 		console.log(formValues);
-	// 	}
-	// }, [formErrors]);
 
 	const validate = (values) => {
 		const errors = {};
@@ -99,7 +90,7 @@ function ModalRegister(props) {
 	return (
 		<div className="modal">
 			<form>
-				<div className="modal-title">Register</div>
+				<h1 className="modal-title">Register</h1>
 
 				<div className="inputField">
 					<h2 className="firstPage-modal-error">{formErrors.IDNP}</h2>

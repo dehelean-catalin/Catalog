@@ -4,6 +4,10 @@ import NavBar from "./NavBar/NavBar";
 import CardList from "./CardList";
 import "./student.css";
 function Grades() {
+	if (localStorage.getItem("userDetails") === null) {
+		console.log("aaaaa");
+		window.location.href = "/";
+	}
 	const subjectGrades = JSON.parse(localStorage.getItem("grades"));
 	const subjectList = JSON.parse(localStorage.getItem("subjectList"));
 	return (

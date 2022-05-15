@@ -518,6 +518,9 @@ tr:hover {
 /*End of SETTINGS*/
 
 @media screen and (min-width: 400px) and (max-width: 580px) {
+	.settings-item {
+		width: 350px;
+	}
 	.subjects-item {
 		width: 100px;
 	}

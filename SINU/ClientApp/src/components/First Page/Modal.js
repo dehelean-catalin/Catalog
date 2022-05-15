@@ -16,6 +16,15 @@ function Modal(props) {
 	// const [isSubmit, setIsSubmit] = useState(false);
 	const history = useHistory();
 
+	const validate = (values) => {
+		const errors = {};
+		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+		if (!regex.test(values.email)) {
+			errors.email = "Invalid format!";
+		}
+		return errors;
+	};
+
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setFormValues({ ...formValues, [name]: value });
@@ -59,21 +68,6 @@ function Modal(props) {
 		}
 	};
 
-	const validate = (values) => {
-		const errors = {};
-		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-		if (!regex.test(values.email)) {
-			errors.email = "Invalid format!";
-		}
-		return errors;
-	};
-
-	// useEffect(() => {
-	// 	if (isSubmit) {
-	// 		handleSubmit();
-	// 	}
-	// }, [isSubmit]);
-
 	const usePasswordToggle = () => {
 		const [visible, setVisiblity] = useState(false);
 
@@ -92,7 +86,7 @@ function Modal(props) {
 	return (
 		<div className="modal">
 			<form>
-				<div className="modal-title">Login</div>
+				<h1 className="modal-title">Login</h1>
 
 				<div className="inputField">
 					<h2 className="firstPage-modal-error">{formErrors.email}</h2>

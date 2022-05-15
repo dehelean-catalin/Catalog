@@ -5,7 +5,10 @@ import Modal from "./Modal";
 import Backdrop from "../First Page/Backdrop";
 function Settings() {
 	const [editArea, setEditArea] = useState(false);
-
+	if (localStorage.getItem("userDetails") === null) {
+		console.log("aaaaa");
+		window.location.href = "/";
+	}
 	const firstName = JSON.parse(localStorage.getItem("userDetails"))["FirstName"];
 	const lastName = JSON.parse(localStorage.getItem("userDetails"))["LastName"];
 	const idcnp = JSON.parse(localStorage.getItem("userDetails"))["IDNP"];
@@ -69,7 +72,7 @@ function Settings() {
 				</button>
 
 				{editArea && <Backdrop onClick={() => setEditArea(false)} />}
-				{editArea && <Modal email={email} phone={phoneNumber} address={address} />}
+				{editArea && <Modal email={email} phone={phoneNumber} address={address} editArea={setEditArea} />}
 			</div>
 		</div>
 	);
